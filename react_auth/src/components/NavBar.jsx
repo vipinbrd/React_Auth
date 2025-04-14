@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function NavBar() {
+    const navigate=useNavigate()
   const navLinkClass = ({ isActive }) =>
     isActive
       ? "font-bold underline"
@@ -9,7 +10,7 @@ export function NavBar() {
   return (
     <div className="bg-purple-600 flex justify-between items-center px-6 py-3 text-white">
       {/* Logo on the left */}
-      <h1 className="text-xl font-bold">React Auth</h1>
+     <button> <h1 onClick={()=>{navigate("/signup")}}  className="text-xl font-bold">React Auth</h1></button>
 
       {/* Links and button on the right */}
       <div className="flex items-center space-x-6">

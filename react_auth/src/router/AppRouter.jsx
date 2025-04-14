@@ -3,6 +3,7 @@ import { AppLayout } from "../components/AppLayout";
 import { createBrowserRouter } from "react-router-dom";
 import { Error } from "../components/Error";
 import { SignUp } from "../components/SignUp";
+import { Login } from "../components/Login";
 
 export function AppRouter(){
  const router=createBrowserRouter([
@@ -13,6 +14,14 @@ export function AppRouter(){
         {
             index:true,
             element:<SignUp/>
+        },
+        {
+            path:"signup",
+            element:<SignUp/>
+        },
+        {
+            path:"login",
+            element:<Login/>
         }
       
      ]
