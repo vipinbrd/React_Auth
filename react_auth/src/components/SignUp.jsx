@@ -1,7 +1,9 @@
 import { useReducer, useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 export function SignUp() {
     const [isLoading, setIsLoading] = useState(false);
+    const navigate=useNavigate()
     function reducer(state, action) {
         switch (action.type) {
             case "NAME": return { ...state, username: action.value }
@@ -93,12 +95,11 @@ export function SignUp() {
                 >
                     {isLoading ? 'Signing up...' : 'Sign Up'}
                 </button>
-
+            
 
                 {isLoading && <p className="mt-2 text-center text-sm text-gray-500">Sending request...</p>}
 
-
-                <button
+                <button onClick={()=>{navigate("/login")}}
                     type="button"
                     className="w-full mt-4 bg-gray-300 text-purple-600 p-2 rounded-md hover:bg-gray-400"
                 >

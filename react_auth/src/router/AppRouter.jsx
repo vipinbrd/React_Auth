@@ -4,6 +4,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Error } from "../components/Error";
 import { SignUp } from "../components/SignUp";
 import { Login } from "../components/Login";
+import { Profile } from "../components/Profile";
+import { Protected } from "../components/Protected";
 
 export function AppRouter(){
  const router=createBrowserRouter([
@@ -22,6 +24,10 @@ export function AppRouter(){
         {
             path:"login",
             element:<Login/>
+        },
+        {
+            path:"profile",
+            element: <Protected><Profile/></Protected>
         }
       
      ]

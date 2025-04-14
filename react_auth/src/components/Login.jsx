@@ -1,9 +1,12 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { store } from "./store/AuthContext";
 
 export function Login() {
   const username = useRef();
   const password = useRef();
+  const{token,setToken}=useContext(store)
+  console.log(token)
 
   async function loginHanlder(e) {
     e.preventDefault();
@@ -14,6 +17,7 @@ export function Login() {
     try{ 
     const response= await axios.post("http://localhost:8888/authenticate",user)
     console.log(response.data)
+    setToken({token:response.data.token})
     alert("login succedd")}
     catch(err){
         console.log(err.response.data)
