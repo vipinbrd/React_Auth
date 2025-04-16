@@ -26,7 +26,8 @@ export function NavBar() {
         <NavLink to="/profile" className={navLinkClass}>
           Profile
         </NavLink>
-        <button onClick={()=>{setToken({})}} className="bg-white text-purple-600 font-semibold px-4 py-1 rounded hover:bg-purple-100 transition">
+        <button onClick={()=>{setToken({}) 
+       localStorage.removeItem("token")}} className="bg-white text-purple-600 font-semibold px-4 py-1 rounded hover:bg-purple-100 transition">
           Logout
         </button>
         </>)}
