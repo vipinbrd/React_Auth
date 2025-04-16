@@ -19,6 +19,9 @@ export function Login() {
             console.log(response.data)
             setToken({ token: response.data.token })
             localStorage.setItem("token",JSON.stringify(response.data.token))
+            setTimeout(()=>{
+            localStorage.removeItem("token")
+            },10000)
             alert("login succeed")
         }
         catch (err) {
